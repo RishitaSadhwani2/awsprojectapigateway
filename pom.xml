@@ -84,25 +84,13 @@
 
     <build>
         <plugins>
-            <!-- Spring Boot Maven Plugin for packaging the application -->
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>3.1.0</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>3.2.4</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+          <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <configuration>
+                <layout>plain</layout>  <!-- This makes a JAR Lambda can read -->
+            </configuration>
+        </plugin>
         </plugins>
     </build>
 </project>
